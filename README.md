@@ -98,7 +98,7 @@ The wallet object that was created will look similar to this:
             return PrivateKeyTestnet(private_key)
 ---
 ### Next, let's create a function that creates an unsigned transaction appropriate metadata.
---
+---
     def create_tx(coin, account, to, amount):
         if coin == ETH:
             value = w3.toWei(amount, "ether") # convert 1.2 ETH to 120000000000 wei
@@ -111,7 +111,7 @@ The wallet object that was created will look similar to this:
                 "gasPrice": w3.eth.generateGasPrice(),
                 "nonce": w3.eth.getTransactionCount(account),
                 "chainId": w3.eth.chain_id
-            }
+                }
         if coin == BTCTEST:
             return PrivateKeyTestnet.prepare_transaction(account.address, [(to, amount, BTC)])
 ---
